@@ -1,28 +1,179 @@
-body{
-  background-color: #FFF0E0;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+body {
+  overflow-x: hidden;
+  font-family: Sans-Serif;
+  margin: 0;
+}
+
+.menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #fff0e0;
+  color: #000000;
+  padding: 3px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.menu-container a {
+  text-decoration: none;
+  color: #fff0e0;
+  transition: color 0.3s ease;
+}
+
+.menu-container a:hover {
+  color: #f58089;
+}
+
+
+
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  padding: 10px 0;
+  font-size: 19px;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 671px) { 
+  .menu-container {
+    flex-direction: column;
+    position: fixed;
+    align-items: flex-end;
+  }
   
+  .menu {
+    position: absolute;
+    box-sizing: border-box;
+    width: 300px;
+    right: -300px;
+    top: 0;
+    margin: -20px;
+    padding: 50px 20px 30px;
+    background: #000000;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translateX(0%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  .menu-container input:checked ~ .menu {
+    transform: translateX(-100%);
+  }
+}
+
+/* desktop styles */
+@media only screen and (min-width: 672px) { 
+  .menu-container {
+    width: 100%;
+  }
+
+  .menu-container a {
+    color: #000000;
+  }
+
+  .menu-container input {
+    display: none;
+  }
+
+  /* Burger menu */
+  .menu-container span {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li {
+    padding: 0 20px;
+  }
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #f58089 #fff0e0;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #fff0e0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f58089;
+    border-radius: 24px;
+    border: 3px solid #fff0e0;
+  }
+
+html, body{
+  background-color: #FFF0E0;
+ font-family: 'Nanum Gothic', sans-serif;
+  max-width: 100%;
+    overflow-x: hidden;
 }
 
 .section1{
   z-index: -9999;
   height: 100vh;
+  text-align: center;
+}
+
+#second{
+  visibility: hidden;
+}
+
+@media all and (max-width: 600px) {
+    #second{
+      visibility: visible;
+    }
+  #first{
+    display: none !important;
+  }
 }
 
 .work_button{
-  z-index: 9999;
   position: absolute;
-  top: 80%;
-  left: 47%;
- background-color:transparent;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+ 
+  width: 70px;
+  background-color:transparent;
 	border-radius:28px;
 	border: 1px solid black;
-	display:inline-block;
+
 	cursor:pointer;
 	color: black;
 
 	font-size:40px;
 	padding: 3px 13px;
-	text-decoration:none;
+	text-decoration: none;
 	text-shadow:0px 1px 0px black;
   transition: all 0.2s ease;
 }
@@ -45,5 +196,6 @@ body{
 }
 
 .links{
-  font-size: 50px;
+  font-size: 43px;
+  padding: 20px;
 }
