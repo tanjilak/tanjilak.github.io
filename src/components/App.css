@@ -1,5 +1,3 @@
-/*https://codesandbox.io/s/wizardly-chaum-kbr2r?file=/src/index.js* 
-FOR MULTI PAGE WEBSITE // turn each section to its own page*/
 /* next: make tabs for design section
 
 add more projects to software section and fix the layout of each box*/
@@ -15,32 +13,31 @@ add more projects to software section and fix the layout of each box*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 
-html, body{
+body{
   background-color: #FFF0E0;
- font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   max-width: 100%;
-    overflow-x: hidden;
-  
   margin: 0;
 }
 
-
-.top{
-  z-index: 1;
-}
-main{
-  height: 100vh;
+html{
+overflow-x: hidden;
 }
 
-/* menu*/
+body {
+  overflow-x: hidden;
+  font-family: Sans-Serif;
+  margin: 0;
+}
+
 .menu-container {
   position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  background: #fff0e0;
-  color: #000000;
-  padding: 3px;
+  background: #000000;
+  color: #fff8f8;
+  padding: 20px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -49,12 +46,63 @@ main{
 
 .menu-container a {
   text-decoration: none;
-  color: #fff0e0;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .menu-container a:hover {
-  color: #f58089;
+  color: #ffbbae;
+}
+
+.menu-container input {
+  display: block;
+  width: 35px;
+  height: 25px;
+  margin: 0;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/* Burger menu */
+.menu-container span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fff8f8;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.menu-container span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-child(3) {
+  transform-origin: 0% 100%;
+}
+
+.menu-container input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(3px,-1px);
+  background: #000000;
+}
+
+.menu-container input:checked ~ span:nth-child(4) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked ~ span:nth-child(3) {
+  transform: rotate(-45deg) translate(-5px,11px);
 }
 
 .menu ul {
@@ -63,18 +111,13 @@ main{
 
 .menu li {
   padding: 10px 0;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 17px;
 }
 
 /* mobile styles */
-@media only screen and (max-width: 671px) { 
-  body, html{
-    overflow-y: hidden;
-  }
+@media only screen and (max-width: 767px) { 
   .menu-container {
     flex-direction: column;
-    position: fixed;
     align-items: flex-end;
   }
   
@@ -85,8 +128,8 @@ main{
     right: -300px;
     top: 0;
     margin: -20px;
-    padding: 50px 20px 30px;
-    background: #000000;
+    padding: 75px 50px 50px;
+    background: #fff8f8;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
     transform-origin: 0% 0%;
@@ -97,21 +140,16 @@ main{
   .menu-container input:checked ~ .menu {
     transform: translateX(-100%);
   }
-    
-  #designs, #coding{
-    display: none !important;
-    visibility: hidden !important;
-  }
 }
 
 /* desktop styles */
-@media only screen and (min-width: 672px) { 
+@media only screen and (min-width: 768px) { 
   .menu-container {
     width: 100%;
   }
 
   .menu-container a {
-    color: #000000;
+    color: #fff8f8;
   }
 
   .menu-container input {
@@ -138,37 +176,13 @@ main{
   .menu li {
     padding: 0 20px;
   }
-
-
 }
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #f58089 #fff0e0;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 15px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #fff0e0;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #f58089;
-    border-radius: 24px;
-    border: 3px solid #fff0e0;
-  }
-
 
 .section1{
+  overflow-y: hidden;
   z-index: -9999;
   height: 100vh;
   text-align: center;
-
 }
 
 #second{
@@ -184,39 +198,7 @@ main{
   }
 }
 
-.work_button{
- 
- width: 150px;
-  background-color:transparent;
-	border-radius:28px;
-	border: 1px solid black;
 
-	cursor:pointer;
-	color: black;
-
-	font-size:20px;
-	padding: 13px 13px;
-	text-decoration: none;
-	text-shadow:0px 1px 0px black;
-  transition: all 0.2s ease;
-}
-
-.button1{
-  float: left;
-  margin-left: 150px;
-  
-}
-.button2{
-  float: right;
-  margin-right: 150px;
-}
-.work_button:hover{
-
-    background-color: #F58089;
-    color: #fff0e0;
-  border: none;
-
-}
 
 #designs, #coding{
   height: 100vh;
