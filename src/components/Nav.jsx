@@ -3,12 +3,15 @@ import { NavLink } from "react-router-dom";
 
 function Nav(){
   return(
-<nav class="menu-container">
+  <nav className="menu-container">
 
- 
-  
+  <input type="checkbox" aria-label="Toggle menu" />
+  <span></span>
+  <span></span>
+  <span></span>
 
-  <div class="menu">
+
+  <div className="menu">
     <ul>
       <li>
         <a href="/">
