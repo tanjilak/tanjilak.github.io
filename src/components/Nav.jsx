@@ -20,12 +20,12 @@ function Nav(){
       </li>
       <li>
         <a href="/designs">
-          Designs
+          Design Portfolio
         </a>
       </li>
       <li>
         <a href="/software">
-          Software
+          Software Portfolio
         </a>
       </li>
     </ul>

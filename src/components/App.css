@@ -1,26 +1,21 @@
-/* next: make tabs for design section
-
-add more projects to software section and fix the layout of each box*/
-
-/* change the 3d animation to fit every device // maybe work it out in blender // or figure out a way to change it based on IOS DEVICE*/
-
-
-/* then work on one more design and apply to design internships*/
-
-/*focus on some data analyst projects or continue web developing?*/
-
-
 /*different pages for react credit: https://codesandbox.io/s/kind-wing-i7zceo?file=/src/index.js*/
 
+/*nav bar css CREDIT: https://wweb.dev/resources/navigation-generator/*/
+
+
+/*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
 /* scrollbar */
-  /* Firefox */
+
+  /* firefox */
   * {
     scrollbar-width: auto;
     scrollbar-color: #000000 #fff0e0;
   }
 
-  /* Chrome, Edge, and Safari */
+  /* chrome, safari */
   *::-webkit-scrollbar {
     width: 8px;
   }
@@ -53,8 +48,9 @@ a{
   color: #000000;
 }
 
+
 /*NAV BAR CSS*/
-/*CREDIT: https://wweb.dev/resources/navigation-generator/*/
+
 .menu-container {
   position: relative;
   display: flex;
@@ -214,7 +210,10 @@ a{
   }
 }
 
+/***********************NAVBAR ENDS***********/
 
+
+/*HOME*/
 .section1{
   text-align: center;
   /*reduce amount of scrolling in home page*/
@@ -224,15 +223,18 @@ a{
 
 /*hide second spline and greeting  for desktop*/
 
+
+/*MOBILE FOR HOME*/
 #second, .greeting{
   visibility: hidden;
   display: none;
   text-align: center;
 }
 
+
 button{
-   margin: 0 auto;
-    display: block;
+  margin: 0 auto;
+  display: block;
   padding: 10px;
 
   margin-bottom: 30px;
@@ -244,6 +246,7 @@ button{
   transition: all 0.5s ease;
   
 }
+
 #one, #two{
   font-size: 42px;
 }
@@ -266,20 +269,21 @@ button{
 /*DESIGN AND CODING SECTION*/
 
 #designs, #coding{
-  height: 100vh;
   text-align: center;
   
 }
+
 h2{
-padding: 10px;
+  padding: 10px;
   margin-top: 20px;
 }
 
+
 /*design section*/
 #gallery {
-   line-height:0;
-   column-count:4;
-   column-gap:20px;
+  line-height:0;
+  column-count:4;
+  column-gap:20px;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -288,36 +292,29 @@ padding: 10px;
    width: 100% !important;
    height: auto !important;
    margin-bottom: 20px;
-  transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
 }
 
 
 
 #gallery img:hover{
-      transform: scale(1.04);
-      border: 2px solid black;
+  transform: scale(1.04);
+  border: 2px solid black;
   cursor: pointer;
 
 }
 
 /*change number of columns based on viewport width*/
-  @media (max-width: 1200px) {
-   #gallery {
-  
-    column-count:         4;
-   }
-}
 
 @media (max-width: 1000px) {
    #gallery {
-   
-    column-count:         3;
+    column-count: 3;
    }
 }
 
 @media (max-width: 800px) {
    #gallery {
-    column-count:         1;
+    column-count: 1;
    }
 
 }
@@ -333,16 +330,16 @@ padding: 10px;
 .firstproj{
   width: 450px;
   height: 300px;
+  border-radius: 10px;
+  background: rgba( 209, 209, 209, 0.4 );
+  box-shadow: 0 8px 7px 0 rgba( 41, 38, 39, 0.37 );
+  
+  /*lets overlay stay inside the container*/
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
 
-border-radius: 10px;
-background: rgba( 209, 209, 209, 0.4 );
-box-shadow: 0 8px 7px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-overflow: hidden;
-
+  overflow: hidden;
+  
 }
 
 .firstproj:hover{
@@ -352,12 +349,15 @@ overflow: hidden;
 
 .firstproj:hover #ratio{
    filter: brightness(70%);
+  
 }
+
+
 /*image size within projects*/
 #ratio{
   max-width: 100%;
- height: 300px;
- 
+  height: 300px;
+  transition: 0.2s filter linear;
 
 }
 
@@ -366,7 +366,7 @@ overflow: hidden;
   bottom: 0;
   left: 0;
   right: 0;
- background-image: linear-gradient(
+  background-image: linear-gradient(
   45deg,
   hsl(351deg 61% 61%) 0%,
   hsl(354deg 60% 65%) 11%,
@@ -380,9 +380,9 @@ overflow: hidden;
   hsl(22deg 74% 86%) 100%
   );
   border-radius: 10px;
-  overflow: hidden !important;
- 
-  width: 100%;
+  overflow: hidden ;
+
+  max-width: 100%;
   
   height: 0;
   transition: 1.2s ease;
@@ -401,4 +401,35 @@ button:hover{
 
 #description{
   font-weight: bold;
+}
+
+#resume{
+  margin-top: 30px;
+  transition: all 0.5s ease;
+  font-weight: bold;
+}
+#resume:hover{
+  color: #ffbbae;
+}
+
+.react-tabs__tab-list{
+  padding: 0;
+}
+
+.react-tabs__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 12px 12px;
+    cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+    background: #fff;
+
+
+    border-radius: 5px 5px 0 0;
 }

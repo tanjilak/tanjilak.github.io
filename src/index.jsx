@@ -3,6 +3,7 @@ import {StrictMode} from 'react';
 
 import {createRoot} from 'react-dom/client';
 import ReactDOM from "react-dom";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Nav,
