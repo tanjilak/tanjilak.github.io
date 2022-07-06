@@ -418,18 +418,36 @@ button:hover{
 
 .react-tabs__tab {
     display: inline-block;
-    border: 1px solid transparent;
-    border-radius: 10px;
     bottom: -1px;
     position: relative;
     list-style: none;
     padding: 12px 12px;
+    margin: 5px;
     cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.react-tabs__tab:hover{
+  color: #ffbbae;
 }
 
 .react-tabs__tab--selected {
-    background: #fff;
+  background: linear-gradient(
+  45deg,
+  hsl(351deg 61% 61%) 0%,
+  hsl(354deg 60% 65%) 11%,
+  hsl(357deg 59% 69%) 22%,
+  hsl(0deg 59% 73%) 33%,
+  hsl(4deg 60% 75%) 44%,
+  hsl(7deg 61% 78%) 56%,
+  hsl(10deg 63% 80%) 67%,
+  hsl(14deg 66% 82%) 78%,
+  hsl(18deg 69% 84%) 89%,
+  hsl(22deg 74% 86%) 100%
+  );
+  border: 1px solid black;
+}
 
-
-    border-radius: 5px 5px 0 0;
+.react-tabs__tab--selected:hover{
+  color:black;
 }
