@@ -1,20 +1,40 @@
-/*different pages for react credit: https://codesandbox.io/s/kind-wing-i7zceo?file=/src/index.js*/
-
-
-
 /* next: make tabs for design section
 
 add more projects to software section and fix the layout of each box*/
 
 /* change the 3d animation to fit every device // maybe work it out in blender // or figure out a way to change it based on IOS DEVICE*/
 
-/* after desktop is done fix the mobile layout */
 
 /* then work on one more design and apply to design internships*/
 
 /*focus on some data analyst projects or continue web developing?*/
 
+
+/*different pages for react credit: https://codesandbox.io/s/kind-wing-i7zceo?file=/src/index.js*/
+
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+/* scrollbar */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #fff0e0;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #fff0e0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: -6px;
+    border: 0px solid #fff0e0;
+  }
+
 
 
 body{
@@ -39,7 +59,7 @@ a{
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+
   background: #000000;
   color: #fff0e0;
   padding: 20px;
@@ -97,7 +117,7 @@ a{
 .menu-container input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(3px,-1px);
-  background: #000000;
+  background: #fff0e0;
 }
 
 .menu-container input:checked ~ span:nth-child(4) {
@@ -129,6 +149,10 @@ a{
     flex-direction: column;
     align-items: flex-end;
   }
+
+  .menu-container a{
+    color: #fff0e0;
+  }
   
   .menu {
     position: absolute;
@@ -138,7 +162,8 @@ a{
     top: 0;
     margin: -20px;
     padding: 75px 50px 50px;
-    background: #fff0e0;
+    background: black;
+  
     border: 1px solid black;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
@@ -149,6 +174,7 @@ a{
 
   .menu-container input:checked ~ .menu {
     transform: translateX(-100%);
+    
   }
 }
 
@@ -196,12 +222,14 @@ a{
   height: 100vh;
 }
 
-/*hide second spline for desktop*/
+/*hide second spline and greeting  for desktop*/
+
 #second, .greeting{
   visibility: hidden;
+  display: none;
   text-align: center;
-
 }
+
 button{
    margin: 0 auto;
     display: block;
@@ -212,6 +240,8 @@ button{
   width: 130px;
   border: 1px solid black;
   background: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
   
 }
 #one, #two{
@@ -223,14 +253,11 @@ button{
   .section1{
     height: 220px;
   }
-  .greeting{
+  .greeting, #second{
     visibility: visible;
+    display: inline !important;
   }
-    #second{
-      visibility: visible;
-      display: inline !important;
-      
-    }
+  
   #first{
     display: none !important;
   }
@@ -314,13 +341,64 @@ backdrop-filter: blur( 4px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-
+overflow: hidden;
 
 }
 
+.firstproj:hover{
+  cursor: pointer;
+
+}
+
+.firstproj:hover #ratio{
+   filter: brightness(70%);
+}
 /*image size within projects*/
 #ratio{
   max-width: 100%;
- height: 220px;
-   
+ height: 300px;
+ 
+
+}
+
+.overlay {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ background-image: linear-gradient(
+  45deg,
+  hsl(351deg 61% 61%) 0%,
+  hsl(354deg 60% 65%) 11%,
+  hsl(357deg 59% 69%) 22%,
+  hsl(0deg 59% 73%) 33%,
+  hsl(4deg 60% 75%) 44%,
+  hsl(7deg 61% 78%) 56%,
+  hsl(10deg 63% 80%) 67%,
+  hsl(14deg 66% 82%) 78%,
+  hsl(18deg 69% 84%) 89%,
+  hsl(22deg 74% 86%) 100%
+  );
+  border-radius: 10px;
+  overflow: hidden !important;
+ 
+  width: 100%;
+  
+  height: 0;
+  transition: 1.2s ease;
+  
+}
+
+.firstproj:hover .overlay {
+  height: 70%;
+  cursor: default;
+  
+}
+
+button:hover{
+  background-color: #ffbbae;
+}
+
+#description{
+  font-weight: bold;
 }
